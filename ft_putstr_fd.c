@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 19:37:06 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/13 15:30:25 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/13 13:55:09 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/13 14:20:26 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*
-	ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	size_t	i;
-	char	*s1;
-	char	*s2;
 
 	i = 0;
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && (unsigned char)s2[i] != (unsigned char)c)
+	if (fd != -1 && s != NULL)
 	{
-		s1[i] = s2[i];
-		i++;
+		while (s[i] != '\0')
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	}
-	s1[i] = s2[i];
-	i++;
-	return ((char *)&s1[i]);
 }

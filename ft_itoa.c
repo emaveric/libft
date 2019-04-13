@@ -1,35 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 19:37:06 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/13 15:30:25 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/12 22:52:45 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/13 00:00:00 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*
-	ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
+char	*ft_itoa(int n)
 {
-	size_t	i;
-	char	*s1;
-	char	*s2;
+	int		len;
+	int		i;
+	char	*str;
+	int		sign;
 
-	i = 0;
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && (unsigned char)s2[i] != (unsigned char)c)
+	sign = 0;
+	len = 0;
+	if (n < 0)
 	{
-		s1[i] = s2[i];
-		i++;
+		sign = 1;
+		len++;
+		n *= -1;
 	}
-	s1[i] = s2[i];
-	i++;
-	return ((char *)&s1[i]);
+	i = n;
+	if (n == 0)
+		len++;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (0);
+	str[len] = '\0';
+	while (--len >= 0)
+	{
+		str[len] = (i % 10) + '0';
+		i /= 10;
+	}
+	if (sign == 1)
+		str[0] = '-';
+	return (str);
 }

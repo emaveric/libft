@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 19:37:06 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/13 15:30:25 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/13 14:52:22 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/13 14:59:27 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*
-	ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t	i;
-	char	*s1;
-	char	*s2;
+	size_t	j;
 
 	i = 0;
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && (unsigned char)s2[i] != (unsigned char)c)
+	j = 0;
+	if (s2[i] == '\0')
+		return ((char *)s1);
+	while (s1[i] != '\0' && i < len)
 	{
-		s1[i] = s2[i];
+		if (s1[i] == s2[j])
+			j++;
+		else
+			j = 0;
 		i++;
+		if (s2[j] == '\0')
+			return ((char *)&s1[i - j]);
 	}
-	s1[i] = s2[i];
-	i++;
-	return ((char *)&s1[i]);
+	return (0);
 }
