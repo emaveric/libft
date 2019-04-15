@@ -6,18 +6,20 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 14:08:27 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/10 15:16:34 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/13 15:00:18 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
-	int j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	i = 0;
-	if (s2[0] == '\0')
+	if (s2[i] == '\0')
 		return ((char *)s1);
 	while (s1[i] != '\0')
 	{

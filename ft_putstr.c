@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 22:30:45 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/11 22:38:52 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/13 13:31:18 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_putstr(char const *s)
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s != NULL)
 	{
-		ft_putchar(s[i]);
-		i++;
+		while (s[i] != '\0')
+		{
+			ft_putchar(s[i]);
+			i++;
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:17:10 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/12 20:24:45 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/15 15:42:01 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	free (*as);
-	free (as);
+	if ((void **)as != NULL)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

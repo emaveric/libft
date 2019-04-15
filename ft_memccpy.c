@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 19:37:06 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/12 20:35:28 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:22:50 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,16 @@ void	*
 	i = 0;
 	s1 = (char *)dst;
 	s2 = (char *)src;
-	while (i < n && s2[i - 1] != (unsigned char)c)
+	if (n == 0)
+		return (0);
+	while ((unsigned char)s2[i] != (unsigned char)c)
 	{
+		if (i == n)
+			return (0);
 		s1[i] = s2[i];
 		i++;
 	}
 	s1[i] = s2[i];
 	i++;
-	while (s1[i + 1] != '\0')
-	{
-		s1[i] = '\0';
-		i++;
-	}
-	return ((char *)s1);
+	return ((char *)&s1[i]);
 }

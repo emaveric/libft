@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 22:28:59 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/15 16:05:58 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/13 20:03:25 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/13 20:42:49 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
+	t_list	*new;
 	size_t	i;
-	char	*new;
-
+	char	*str;
+	
+	str = (char *)content;
 	i = 0;
-	new = (char *)b;
-	if (len == 0)
-		return (new);
-	while (i < len)
+	new = malloc(sizeof(t_list) * content_size);
+	if (new == NULL)
+		return (0);
+	while (content)
 	{
-		new[i] = (unsigned char)c;
+//		new->content = str[i];
+		new = new->next;
 		i++;
 	}
+	new->next = NULL;
 	return (new);
 }

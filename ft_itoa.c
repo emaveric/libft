@@ -1,36 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 21:44:58 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/13 14:30:27 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/12 22:52:45 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/14 22:42:40 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_itoa(int n)
 {
-	size_t	i;
+	int		len;
+	int		i;
 	char	*str;
+	int		sign;
 
-	i = 0;
-	if (s != NULL && f != NULL)
+	//if (n < -2147483648 && n > 2147483647)
+	//	return (0);
+	sign = 0;
+	len = 0;
+	if (n < 0)
 	{
-		str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-		if (str == NULL)
-			return (0);
-		while (s[i] != '\0')
-		{
-			str[i] = f(s[i]);
-			i++;
-		}
-		str[i] = '\0';
+		sign = 1;
+		len++;
+		n *= -1;
 	}
-	else
+	i = n;
+	if (n == 0)
+		len++;
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (0);
+	str[len] = '\0';
+	while (--len >= 0)
+	{
+		str[len] = (i % 10) + '0';
+		i /= 10;
+	}
+	if (sign == 1)
+		str[0] = '-';
 	return (str);
 }

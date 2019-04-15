@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 22:28:59 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/15 16:05:58 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/13 14:52:22 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/13 14:59:27 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t	i;
-	char	*new;
+	size_t	j;
 
 	i = 0;
-	new = (char *)b;
-	if (len == 0)
-		return (new);
-	while (i < len)
+	j = 0;
+	if (s2[i] == '\0')
+		return ((char *)s1);
+	while (s1[i] != '\0' && i < len)
 	{
-		new[i] = (unsigned char)c;
+		if (s1[i] == s2[j])
+			j++;
+		else
+			j = 0;
 		i++;
+		if (s2[j] == '\0')
+			return ((char *)&s1[i - j]);
 	}
-	return (new);
+	return (0);
 }
