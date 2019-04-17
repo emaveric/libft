@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 22:28:59 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/11 21:30:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/15 16:05:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memset(void *b, int c, size_t len)
 		return (new);
 	while (i < len)
 	{
-		new[i] = (char)c;
+		new[i] = (unsigned char)c;
 		i++;
 	}
 	return (new);

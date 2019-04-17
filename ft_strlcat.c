@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 16:36:47 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/15 18:56:57 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/13 17:51:11 by emaveric          #+#    #+#             */
+/*   Updated: 2019/04/16 19:37:57 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int n)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
-	j = -1;
 	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == (char)n)
-			j = i;
+	j = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (dst[i] != '\0' && i < size)
 		i++;
+	while (src[j] != '\0' && i + j < size - 1)
+	{
+		dst[i + j] = src[j];
+		j++;
 	}
-	if (!n)
-		return ((char *)&str[i]);
-	if (j != -1)
-		return ((char *)&str[j]);
-	return (0);
+	if (j > 0)
+	{
+		dst[i + j] = '\0';
+		return (ft_strlen(src) + i);
+	}
+	return (ft_strlen(src) + i + j);
 }

@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 14:15:37 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/13 14:21:38 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/14 23:05:34 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd == 2)
-		write(2, &c, 1);
-	if (fd == 1)
-		write(1, &c, 1);
+	if (fd != -1)
+		write(fd, &c, 1);
 }
