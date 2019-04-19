@@ -6,9 +6,11 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 16:58:29 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/10 17:10:40 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/19 21:52:53 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {

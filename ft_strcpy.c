@@ -6,20 +6,22 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:56:15 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/08 22:04:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/19 22:57:23 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, const char *s2)
+#include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 
 	i = 0;
-	while (s2[i] != '\0')
+	while (src[i] != '\0')
 	{
-		s1[i] = s2[i];
+		dst[i] = src[i];
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	dst[i] = '\0';
+	return (dst);
 }

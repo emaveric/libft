@@ -6,14 +6,16 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 21:37:07 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/10 21:44:03 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/19 22:59:40 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *restrict s1, const char *restrict s2, int n)
+#include "libft.h"
+
+char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;

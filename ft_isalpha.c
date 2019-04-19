@@ -6,13 +6,15 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 16:51:55 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/08 18:56:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/19 21:50:34 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (c);
+		return (1);
 	return (0);
 }

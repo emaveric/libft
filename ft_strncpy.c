@@ -6,26 +6,26 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 23:00:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/11 20:35:21 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/19 22:58:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *s1, const char *s2, size_t count)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t i;
 
 	i = 0;
-	while (s2[i] != '\0' && i < count)
+	while (src[i] != '\0' && i < len)
 	{
-		s1[i] = s2[i];
+		dst[i] = src[i];
 		i++;
 	}
-	while (i < count)
+	while (i < len)
 	{
-		s1[i] = '\0';
+		dst[i] = '\0';
 		i++;
 	}
-	return (s1);
+	return (dst);
 }

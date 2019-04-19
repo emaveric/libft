@@ -6,13 +6,13 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 23:18:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/16 20:14:53 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/19 23:07:42 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_res_search(char *str, int i, int sign)
+static int		ft_res_search(const char *str, int i, int sign)
 {
 	long long res;
 
@@ -31,7 +31,7 @@ int		ft_res_search(char *str, int i, int sign)
 	return (res);
 }
 
-int		ft_atoi(char *str)
+int				ft_atoi(const char *str)
 {
 	int			i;
 	int			sign;
