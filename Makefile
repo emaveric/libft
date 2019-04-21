@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2019/04/19 22:04:57 by emaveric         ###   ########.fr        #
+#    Updated: 2019/04/21 15:41:22 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ OBJ = ft_atoi.o ft_lstiter.o ft_putendl.o ft_strdel.o ft_strnequ.o \
 	  ft_strncat.o ft_toupper.o ft_lstdel.o ft_putchar.o ft_strcmp.o \
 	  ft_strncmp.o ft_lstdelone.o ft_putchar_fd.o ft_strcpy.o ft_strncpy.o
 
-HEAD = -I *.h
+HEAD = -I libft.h
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -49,10 +49,12 @@ all: $(NAME)
 $(NAME):
 	gcc $(FLAGS) -c $(HEAD) $(SRC)
 	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
 clean:
-	/bin/rm -f $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all

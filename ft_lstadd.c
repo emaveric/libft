@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 20:08:50 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/18 20:12:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/21 18:53:48 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (new)
+	if (alst && new)
 	{
 		new->next = *alst;
 		*alst = new;

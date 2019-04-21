@@ -6,13 +6,13 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 17:16:59 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/19 20:44:03 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/21 18:50:03 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_words(const char *s, char c)
+static int		ft_words(char const *s, char c)
 {
 	int	count;
 	int	k;
@@ -31,7 +31,7 @@ static int		ft_words(const char *s, char c)
 	return (count);
 }
 
-static int		ft_splitlen(const char *s, char c, int k)
+static int		ft_splitlen(char const *s, char c, int k)
 {
 	int	len;
 
@@ -51,14 +51,7 @@ static void		ft_splitfree(char **str, int i)
 		i--;
 		ft_strdel(&str[i]);
 	}
-	ft_strdel(&str[i]);
-}
-
-static size_t	ft_splitgo(const char *s, char c, size_t k)
-{
-	while (s[k] == c)
-		k++;
-	return (k);
+	free(str);
 }
 
 char			**ft_strsplit(char const *s, char c)
@@ -75,15 +68,14 @@ char			**ft_strsplit(char const *s, char c)
 		return (0);
 	while (s[k] != '\0')
 	{
-		k = ft_splitgo(s, c, k);
+		while (s[k] == c)
+			k++;
 		if (s[k] != '\0' && s[k] != c)
-		{
 			if (!(str[i++] = ft_strsub(s, k, ft_splitlen(s, c, k))))
 			{
 				ft_splitfree(str, i);
 				return (0);
 			}
-		}
 		k += ft_splitlen(s, c, k);
 	}
 	str[i] = NULL;

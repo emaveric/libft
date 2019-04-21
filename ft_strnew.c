@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 20:00:49 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/12 20:16:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/21 17:13:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnew(size_t size)
 	char	*str;
 
 	i = 0;
+	if (size == SIZE_MAX)
+		return (0);
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
 		return (0);

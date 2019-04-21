@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/19 23:15:23 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/04/21 15:47:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,12 @@ char			*ft_strrchr(const char *str, int n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 char			*ft_strstr(const char *haystack, const char *needle);
-char			*ft_strcat(char *restrict s1, const char *restrict s2);
-char			*
-ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
+char			*ft_strcat(char *s1, const char *s2);
+char			*ft_strncat(char *s1, const char *s2, size_t n);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
-void			*ft_memcpy(void *restrict dst,
-		const void *restrict src, size_t n);
-void			*
-ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -78,8 +75,7 @@ char			*
 ft_strnstr(const char *haystack, const char *needle, size_t len);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			**ft_strsplit(char const *s, char c);
-size_t			ft_strlcat(char *restrict dst,
-		const char *restrict src, size_t size);
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
 void			ft_memdel(void **ap);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
