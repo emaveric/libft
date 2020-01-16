@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/21 15:47:29 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/01/16 19:22:44 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ int				ft_sqrt(int nb);
 void			ft_div_mod(int a, int b, int *div, int *mod);
 int				ft_recursive_factorial(int nb);
 int				ft_is_whitespaces(char c);
+int				ft_numlen(int num);
+char			*ft_num_to_str(int num);
 
 #endif

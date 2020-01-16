@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2019/04/21 15:41:22 by emaveric         ###   ########.fr        #
+#    Updated: 2020/01/16 20:16:32 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRC = ft_atoi.c ft_bzero.c ft_div_mod.c ft_is_whitespaces.c ft_isalnum.c \
 	  ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c \
 	  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 	  ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
-	  ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c
+	  ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_num_to_str.c \
+	  ft_numlen.c
 
 OBJ = ft_atoi.o ft_lstiter.o ft_putendl.o ft_strdel.o ft_strnequ.o \
 	  ft_bzero.o ft_lstmap.o ft_putendl_fd.o ft_strdup.o ft_strnew.o \
@@ -38,7 +39,8 @@ OBJ = ft_atoi.o ft_lstiter.o ft_putendl.o ft_strdel.o ft_strnequ.o \
 	  ft_strmap.o ft_swap.o ft_itoa.o ft_memmove.o ft_strchr.o \
 	  ft_strmapi.o ft_tolower.o ft_lstadd.o ft_memset.o ft_strclr.o \
 	  ft_strncat.o ft_toupper.o ft_lstdel.o ft_putchar.o ft_strcmp.o \
-	  ft_strncmp.o ft_lstdelone.o ft_putchar_fd.o ft_strcpy.o ft_strncpy.o
+	  ft_strncmp.o ft_lstdelone.o ft_putchar_fd.o ft_strcpy.o ft_strncpy.o \
+	  ft_num_to_str.o ft_numlen.o
 
 HEAD = -I libft.h
 
