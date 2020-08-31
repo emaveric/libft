@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_check_space.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/18 20:13:00 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
+/*   Created: 2020/07/25 20:12:42 by emaveric          #+#    #+#             */
+/*   Updated: 2020/07/25 20:13:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+int		ft_check_space(const char *line)
 {
-	if (lst && f)
+	int		i;
+
+	i = 0;
+	while (line[i] != '\0')
 	{
-		while (lst)
-		{
-			f(lst);
-			lst = lst->next;
-		}
+		if (line[i] == ' ')
+			return (0);
+		i++;
 	}
+	return (-1);
 }

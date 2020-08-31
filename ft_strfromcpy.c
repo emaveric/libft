@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_strfromcpy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/18 20:13:00 by emaveric          #+#    #+#             */
-/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
+/*   Created: 2020/07/26 17:51:33 by emaveric          #+#    #+#             */
+/*   Updated: 2020/07/26 17:55:34 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+char	*ft_strfromcpy(char *dst, const char *str, size_t len)
 {
-	if (lst && f)
+	size_t	i;
+
+	i = 0;
+	while (str[len] != '\0')
 	{
-		while (lst)
-		{
-			f(lst);
-			lst = lst->next;
-		}
+		dst[i] = str[len];
+		i++;
+		len++;
 	}
+	dst[i] = '\0';
+	return (dst);
 }

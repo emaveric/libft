@@ -6,12 +6,14 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/03/02 16:08:44 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/07/30 11:54:23 by eshor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 10
+# define SIZE_MAX 10000000
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -115,5 +117,9 @@ char				*ft_strjoin_free(char *s1, char *s2, int opt);
 char				*ft_strncut(char *s, int start, int end);
 char				*itoa_base(int value, int base);
 void				ft_free(char **res, size_t i);
+int					get_next_line(const int fd, char **line);
+int					ft_atoi_max_int(int *n, const char *str);
+int					ft_check_space(const char *line);
+char				*ft_strfromcpy(char *dst, const char *str, size_t len);
 
 #endif
